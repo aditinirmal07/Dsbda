@@ -1,0 +1,50 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat May 20 07:22:17 2023
+
+@author: Manaswi
+"""
+
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import GaussianNB
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.metrics import confusion_matrix,ConfusionMatrixDisplay,classification_report,accuracy_score, precision_score, recall_score, f1_score
+from sklearn.preprocessing import LabelEncoder
+
+df=pd.read_csv("C:\\Users\\Manaswi\\Documents\\dataset\\Iris.csv")
+#print(df)
+#df.head(5)
+#print(df)
+#df.describe(include = 'all')
+#print(df)
+ #result=df.info()
+#print(result)
+
+print(df.shape)
+result=df['Species'].unique()
+#print(result)
+x = df.iloc[:,1:5]
+y = df.iloc[:,5:]
+#encode = LabelEncoder()
+#y = encode.fit_transform(y)
+x_train,x_test,y_train,y_test = train_test_split(x,y,test_size = 0.3,random_state = 0)
+naive_bayes = GaussianNB()
+naive_bayes.fit(x_train,y_train)
+pred = naive_bayes.predict(x_test)
+#print(pred)
+y_test
+#print(y_test)
+matrix =  confusion_matrix(y_test,pred,labels = naive_bayes.classes_)
+#print(matrix)
+conf_matrix = ConfusionMatrixDisplay(confusion_matrix=matrix,display_labels=naive_bayes.classes_)
+conf_matrix.plot(cmap=plt.cm.YlGn)
+plt.show()
+print(classification_report(y_test,pred))
+print('\nAccuracy: {:.2f}'.format(accuracy_score(y_test,pred)))
+print(f"Error rate is {1 - accuracy_score(y_test, y_test)}")
+print(f"Precision score is {precision_score(y_test, y_test, average='macro')}")
+print(f"Recall score is {recall_score(y_test, y_test, average='macro')}")
+print(classification_report(y_test, y_test))
