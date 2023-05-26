@@ -1,0 +1,49 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu May 25 18:47:54 2023
+
+@author: Manaswi
+"""
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+df=pd.read_csv("C:\\Users\\Manaswi\\Documents\\dataset\\Iris.csv")
+#print(df)
+result=df.describe()
+#print(result)
+result=df.info()
+#print(result)
+result=df.shape
+#print(result)
+result=df.describe()
+#print(result)
+plt.figure(figsize=(10,7))
+x=df["SepalLengthCm"]
+plt.hist(x,bins=20,color="black")
+plt.title("Sepal Length in Cm")
+plt.xlabel("Sepal_Length_Cm")
+#plt.ylabel("count")
+
+plt.figure(figsize=(10,7))
+x=df["SepalWidthCm"]
+plt.hist(x,bins=20,color="red")
+plt.title("Sepal Width in Cm")
+plt.xlabel("Sepal_Width_Cm")
+#plt.ylabel("count")
+
+plt.figure(figsize=(10,7))
+x=df["PetalLengthCm"]
+plt.hist(x,bins=20,color="pink")
+plt.title("Petal Length in Cm")
+plt.xlabel("Petal_Length_Cm")
+#plt.ylabel("count")
+
+
+plt.figure(figsize=(10,7))
+x=df["PetalWidthCm"]
+plt.hist(x,bins=20,color="Yellow")
+plt.title("Petal Width in Cm")
+plt.xlabel("Petal_Width_Cm")
+plt.ylabel("count")
