@@ -1,0 +1,115 @@
+# -*- coding: utf-8 -*-
+
+"""
+
+Created on Mon May  8 20:54:15 2023
+
+@author: Lenovo
+
+"""
+
+import pandas as pd
+
+import numpy as np
+
+import matplotlib.pyplot as plt
+
+import seaborn as sns
+
+data = pd.read_csv("C:\\Users\\priya\\OneDrive\\Documents\\dataset\\tested.csv")
+
+#print(data)
+
+#data = sns.load_dataset('tested')
+
+#print(data)
+
+result= data.head(5)
+
+#print(result)
+
+result= data.tail(5)
+
+#print(result)
+
+result=data.isnull().sum(axis=1)
+
+#print(result)
+
+result=data.notnull()
+
+#print(result)
+
+#Distribution plot
+
+sns.distplot(x=data['Age'], bins= 10)
+
+sns.distplot(data['Age'], bins=10, kde=False)
+
+#Joint plot
+
+#sns.jointplot(x= data['Age'], y=data['Fare'], kind = 'scatter')
+
+#sns.jointplot(x= data['Age'], y= data['Fare'], kind='hex')
+
+#sns.rugplot(data['Fare'])
+
+#Categorical plot
+
+#barplot
+
+#sns.barplot(x='Sex', y ='Age', data=data)
+
+#sns.barplot(x='Sex' , y='Age' , data=data , estimator = np.std)
+
+#countplot
+
+#sns.countplot(x ='Sex', data=data)
+
+#Boxplot
+
+#sns.boxplot(x='Sex', y='Age', data=data)
+
+#sns.boxplot(x='Sex', y='Age', data=data , hue="Survived")
+
+#Violinplot
+
+#sns.violinplot(x='Sex', y='Age', data=data)
+
+#sns.violinplot(x='Sex', y='Age', data=data, hue="Survived")
+
+#Advanced plot
+
+#Strip plot
+
+#sns.stripplot(x= 'Sex', y='Age', data=data)
+
+#sns.stripplot(x='Sex ', y='Age', data=data, jitter=False)
+
+#sns.stripplot(x='Sex' ,y='Age', data=data, jitter=True, Hue="Survived")
+
+#Swarmplot
+
+#sns.swarmplot(x='Sex', y='Age', data=data)
+
+#sns.swarmplot(x='Sex', y='Age', data=data, hue='Survived')
+
+#Matrix plot
+
+#Heap maps
+
+#data.corr()
+
+#corr= data.corr()
+
+#print(corr)
+
+#sns.heatmap(corr)
+
+#sns.heatmap(corr , annot=True)
+
+#sns.heatmap(corr)
+
+#Cluster Map
+
+#sns.histplot(data['Fare'], kde=False , bins=10)
