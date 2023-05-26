@@ -1,0 +1,50 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+
+import pandas as pd
+from sklearn import preprocessing
+import numpy as np
+data = pd.read_csv("C:\\Users\\priya\\OneDrive\\Documents\\dataset\\Trandingmovies.csv")
+#print(data)
+#result= data.head(5)
+#print(result)
+#result= data.tail(5)
+#print(result)
+#result=data.columns
+#print(result)
+#result=data.shape
+#print(result)
+#result=data.dtypes
+#print(result)
+#result=data.columns.values
+#print(result)
+#result=data.describe(include='all')
+#print(result)
+#result=data['title']
+#print(result)
+#result=data.sort_index(axis=1,ascending=False)
+#print(result)
+#result=data.sort_values(by="id")
+#print(result)
+#result=data.iloc[5]
+#print(result)
+#result=data[0:5]
+#print(result)
+#result=data.loc[:,["id","title"]]
+#print(result)
+#result= data.iloc[:6,:1]
+#display(result)
+#result=data.iloc[1,1]
+#display(result)
+#result=data['title'].iloc[1]
+#display(result)
+#result=data.iloc[:2,:2]
+#display(result)
+#result=data.isnull().sum(axis=1)
+#display(result)
+result=data.isnull().sum()
+print(result)
